@@ -2,11 +2,11 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import  {mapTabStateToTopLevel} from '../utils/tabStateHelpers';
 import InformationPanel from '../components/informationPanel';
-import AdvancedSettings from '../components/advancedSettings';
+import AdvancedShell from '../components/advancedShell';
 
 let viewMap = {
         '1.0': <InformationPanel/>,
-        '4.0': <AdvancedSettings/>
+        '4.0': <AdvancedShell/>
     }
 
     function getCurrentView(key) {
