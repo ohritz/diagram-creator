@@ -5,8 +5,8 @@ import InformationPanel from '../components/informationPanel';
 import AdvancedShell from '../components/advancedShell';
 
 let viewMap = {
-        '1.0': <InformationPanel/>,
-        '4.0': <AdvancedShell/>
+        '1': <InformationPanel/>,
+        '4': <AdvancedShell/>
     }
 
     function getCurrentView(key) {
@@ -31,7 +31,7 @@ MainPanel.propTypes = {
 
 function mapStateToProps (state) {
     return {
-        activeTab: mapTabStateToTopLevel(state.currentTab)
+        activeTab: state.currentTab.level1
     };
 }
 

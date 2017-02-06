@@ -1,3 +1,6 @@
 export default {
-    currentTab: '1.0'    
+    currentTab: {
+        level1: '1',
+        level2: '1'
+    }   
 };

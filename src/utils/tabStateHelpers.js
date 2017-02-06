@@ -1,5 +1,5 @@
 export function mapTabStateToTopLevel(tabState) {
-    return (tabState.split('.')[0]) + '.0';
+    return tabState.level1 + '.0';
 }
 
 export function mapTabStateToSubLevel(tabState, prefix) {
