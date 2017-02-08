@@ -1,10 +1,10 @@
 import React from "react";
-import SubTabs from '../containers/advancedTabs';
-const AdvancedShell = () => {
+import ColSettingTabs from '../containers/colSettingsTabs';
+const ColumnSettingShell = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-12"><SubTabs /></div>
+        <div className="col-md-12"><ColSettingTabs /></div>
       </div>
       <div className="row">
         <div className="col-md-12">
@@ -15,4 +15,4 @@ const AdvancedShell = () => {
   );
 };
 
-export default AdvancedShell;
+export default ColumnSettingShell;

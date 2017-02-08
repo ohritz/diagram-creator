@@ -1,6 +1,6 @@
 import React from "react";
 import MainTabs from "../containers/mainTabs";
-import MainPanel from "../containers/mainPanel";
+import MainViewSelector from "../containers/mainViewSelector";
 const Shell = () => {
   return (
     <div className="container-fluid">
@@ -11,7 +11,7 @@ const Shell = () => {
       </div>
       <div className="row">
         <div className="col-md-12">
-          <MainPanel />
+          <MainViewSelector />
         </div>
       </div>
     </div>

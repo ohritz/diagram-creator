@@ -1,10 +1,10 @@
 // Set up your root reducer here...
  import { combineReducers } from 'redux';
 
- import tabStateReducer from './tabStateReducer';
+ import currentTab from './currentTab';
  
  const rootReducer = combineReducers({
-     currentTab: tabStateReducer
+     currentTab
  });
  
  export default rootReducer;

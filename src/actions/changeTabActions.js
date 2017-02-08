@@ -1,15 +1,10 @@
 import * as types from '../constants/actionTypes';
 
-export function changeTopLevelState(selectedKey) {
-    return {
-        type: types.CHANGE_TOPLEVEL_TAB,
-        tab: selectedKey        
-    };    
-}
-
-export function changeSubLevelState(selectedKey) {
-    return {
-        type: types.CHANGE_SUBLEVEL_TAB,
-        tab: selectedKey        
-    };    
+export function changeTab(selectedTab, level) {
+  var tab = {};
+  tab[level] = selectedTab;
+  return {
+    type: types.CHANGE_TAB,
+    tab: tab
+  }
 }

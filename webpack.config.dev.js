@@ -38,6 +38,8 @@ export default {
       inject: true
     })
   ],
+  externals: {
+  },
   module: {
     loaders: [
       {test: /\.jsx?$/, exclude: /node_modules/, loaders: ['babel']},

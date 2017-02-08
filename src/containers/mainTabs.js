@@ -2,36 +2,42 @@ import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/changeTabActions";
+import {MAIN} from '../constants/tabLevels';
 
-// import { mapTabStateToTopLevel } from "../utils/tabStateHelpers";
 import { Nav, NavItem } from "react-bootstrap";
+
+
+
+function changeTopLevelState(selectedTab) {
+  return actions.changeTab(selectedTab, MAIN);
+}
 
 const MainTabs = props => {
   return (
     <Nav
       bsStyle="tabs"
-      activeKey={props.activeTab}
+      activeKey={props.currentTab}
       onSelect={props.actions.changeTopLevelState}
     >
       <NavItem eventKey={"1"}>Infomation</NavItem>
-      <NavItem eventKey={"2"}>Data Entry</NavItem>
-      <NavItem eventKey={"3"}>General Settings</NavItem>
-      <NavItem eventKey={"4"}>Advanced Settings</NavItem>
+      <NavItem eventKey={"2"}>Datainmatning</NavItem>
+      <NavItem eventKey={"3"}>Inställningar</NavItem>
+      <NavItem eventKey={"4"}>Kolumninställningar</NavItem>
     </Nav>
   );
 };
 
 MainTabs.propTypes = {
   actions: PropTypes.object.isRequired,
-  activeTab: PropTypes.string.isRequired
+  currentTab: PropTypes.string.isRequired
 };
 
 function mapStateToProps(state) {
-  return { activeTab: state.currentTab.level1 };
+  return { currentTab: state.currentTab[MAIN]};
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) };
+  return { actions: bindActionCreators({changeTopLevelState}, dispatch) };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainTabs);
