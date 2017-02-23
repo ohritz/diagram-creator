@@ -1,5 +1,5 @@
 // import React...
-import React from 'react';
+import * as React from 'react';
 
 // ... Handsontable with its main dependencies...
 
@@ -10,7 +10,7 @@ import React from 'react';
 // import Handsontable from 'handsontable';
 
 // ... and HotTable
-import HotTable from 'react-handsontable';
+import * as HotTable from 'react-handsontable';
 
 const handsontableData = [
       ["", "Ford", "Volvo", "Toyota", "Honda"],

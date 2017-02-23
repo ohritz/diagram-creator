@@ -1,24 +1,33 @@
-import React, { PropTypes } from "react";
-import { connect } from "react-redux";
-import InformationPanel from "../components/informationPanel";
-import ColumnSettingShell from "../components/colSettingShell";
+import * as React from 'react';
+import { connect } from 'react-redux';
+import InformationPanel from '../components/informationPanel';
+import ColumnSettingShell from '../components/colSettingShell';
 import DataEntry from './dataEntry';
 
 let viewMap = {
-  "1": <InformationPanel />,
-  "2": <DataEntry />,
-  "4": <ColumnSettingShell />
+  '1': <InformationPanel />,
+  '2': <DataEntry />,
+  '4': <ColumnSettingShell />
 };
 
-import { MAIN } from "../constants/tabLevels";
+import { MAIN } from '../constants/tabLevels';
 
-const MainViewSelector = props => {
-  return (
-    viewMap[props.currentTab]
-  );
+interface MainViewSelectorProps {
+  currentTab?: string;
+}
+
+class MainViewSelector extends React.Component<MainViewSelectorProps, {}> {
+  static propTypes = {
+    currentTab: React.PropTypes.string.isRequired
+  }
+
+  render() {
+    return (
+      viewMap[this.props.currentTab]
+    );
+  };
 };
 
-MainViewSelector.propTypes = { currentTab: PropTypes.string.isRequired };
 
 function mapStateToProps(state) {
   return { currentTab: state.currentTab[MAIN] };
